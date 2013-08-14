@@ -15,6 +15,9 @@ define("port", default=8000, help="run on the given port",type=int)
 class IndexHandler(tornado.web.RequestHandler):
 	def get(self):
 		self.render('index.jade')
+		
+class SocketHandler(Object):
+	def
 
 if __name__ == '__main__':
 	tornado.options.parse_command_line()
