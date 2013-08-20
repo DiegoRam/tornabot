@@ -16,8 +16,15 @@ class IndexHandler(tornado.web.RequestHandler):
 	def get(self):
 		self.render('index.jade')
 		
-class SocketHandler(Object):
-	def
+class SocketHandler(tornado.socket.WebSocketHandler):
+	"""
+	this class represent the basic socket operation to move the wheels
+	"""
+	def on_open(self):
+		self.write_message("connected!!")
+		
+	def on_close(self):
+		pass
 
 if __name__ == '__main__':
 	tornado.options.parse_command_line()
